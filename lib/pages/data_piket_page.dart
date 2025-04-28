@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp_1pml/pages/detail_piket_page.dart';
 
 class DataPiketPage extends StatefulWidget {
   final String namaAkun;
@@ -219,7 +220,19 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       itemBuilder: (context, index) {
                         final piket = daftarPiket[index];
                         return GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => DetailPiketPage(
+                                      namaAnggota: piket['namaAnggota'],
+                                      tanggalPiket: piket['tanggalPiket'],
+                                      tugasPiket: piket['tugasPiket'],
+                                    ),
+                              ),
+                            );
+                          },
                           child: Card(
                             color: Colors.deepOrange,
                             margin: const EdgeInsets.symmetric(
