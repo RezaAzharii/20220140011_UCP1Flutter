@@ -313,7 +313,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        
+                        Navigator.pop(context);
                       },
                       child: const Text(
                         "Masuk Sekarang!",
