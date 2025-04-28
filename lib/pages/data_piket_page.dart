@@ -66,6 +66,22 @@ class _DataPiketPageState extends State<DataPiketPage> {
 
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                   ),
+                  const SizedBox(height: 8),
+                  TextFormField(
+                    controller: _tanggalPiketController,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.event_available_outlined),
+                      hintText: "Pilih Tanggal",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    readOnly: true,
+                    onTap: () {
+                      
+                    },
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                  ),
                 ],
               ),
             ),
