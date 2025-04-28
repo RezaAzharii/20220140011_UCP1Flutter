@@ -56,6 +56,68 @@ class _LoginPagesState extends State<LoginPages> {
                     fontFamily: "Schyler",
                   ),
                 ),
+                const SizedBox(height: 30),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Email',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    TextFormField(
+                      controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.email),
+                        hintText: "Email",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      validator: _validateEmail,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Password',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: _obscurePassword,
+                      obscuringCharacter: "*",
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.lock),
+                        hintText: "Password",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscurePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.grey,
+                          ),
+                          onPressed: () {
+                            setState(
+                              () => _obscurePassword = !_obscurePassword,
+                            );
+                          },
+                        ),
+                      ),
+                      validator: _validatePassword,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
