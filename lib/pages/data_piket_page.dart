@@ -18,6 +18,14 @@ class _DataPiketPageState extends State<DataPiketPage> {
   final _tugasPiketController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  List<Map<String, dynamic>> daftarPiket = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _namaAnggotaController.text = widget.namaAkun;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
