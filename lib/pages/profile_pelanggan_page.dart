@@ -40,6 +40,18 @@ class ProfilePelangganPage extends StatelessWidget {
               radius: 70,
               backgroundImage: AssetImage('assets/images/bob3.jpg'),
             ),
+            const SizedBox(height: 30),
+            Text(
+              namaCustomer,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 6),
+            Text(email, style: TextStyle(fontSize: 16, color: Colors.black54)),
+            const SizedBox(height: 4),
+            Text(
+              noHp,
+              style: TextStyle(fontSize: 16, color: Colors.black54),
+            ),
           ],
         ),
       ),
