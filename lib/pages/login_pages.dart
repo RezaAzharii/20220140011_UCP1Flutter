@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:ucp_1pml/pages/home_page.dart';
+import 'package:ucp_1pml/pages/register_page.dart';
+
+class LoginPages extends StatefulWidget {
+  const LoginPages({super.key});
+
+  @override
+  State<LoginPages> createState() => _LoginPagesState();
+}
+
+class _LoginPagesState extends State<LoginPages> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  bool _obscurePassword = true;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+    );
+  }
+}
