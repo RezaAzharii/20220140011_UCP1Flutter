@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ucp_1pml/pages/data_barang_page.dart';
+import 'package:ucp_1pml/pages/data_pelanggan_page.dart';
+import 'package:ucp_1pml/pages/data_piket_page.dart';
 
 class HomePage extends StatefulWidget {
   final String akun;
@@ -80,7 +83,13 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-                          
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => DataPiketPage(namaAkun: widget.akun),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
@@ -119,7 +128,12 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-                          
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DataPelangganPage(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
@@ -159,7 +173,10 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DataBarangPage()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
