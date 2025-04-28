@@ -278,7 +278,16 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
               ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _namaCustomerController.clear();
+                  _emailController.clear();
+                  _noHpController.clear();
+                  _alamatController.clear();
+                  _provinsiController.clear();
+                  _kodePosController.clear();
+
+                  _formKey.currentState?.reset();
+                },
                 style: ButtonStyle(
                   fixedSize: WidgetStateProperty.all(const Size(400, 50)),
                   backgroundColor: WidgetStateProperty.all(Colors.white),
