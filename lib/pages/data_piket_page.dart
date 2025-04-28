@@ -95,6 +95,64 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     },
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                   ),
+                  const SizedBox(height: 20),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: const Text(
+                      'Tugas Piket',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              controller: _tugasPiketController,
+                              decoration: InputDecoration(
+                                hintText: "Tugas Piket",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                              ),
+
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            fixedSize: WidgetStateProperty.all(
+                              const Size(400, 56),
+                            ),
+                            backgroundColor: WidgetStateProperty.all(
+                              Colors.deepOrange,
+                            ),
+                            shape: WidgetStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                          ),
+                          child: const Text(
+                            "Tambah",
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]
+                  ),
                 ],
               ),
             ),
