@@ -154,7 +154,19 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       SizedBox(width: 20),
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              setState(() {
+                                daftarPiket.add({
+                                  'namaAnggota': _namaAnggotaController.text,
+                                  'tanggalPiket': _tanggalPiketController.text,
+                                  'tugasPiket': _tugasPiketController.text,
+                                });
+                                _tanggalPiketController.clear();
+                                _tugasPiketController.clear();
+                              });
+                            }
+                          },
                           style: ButtonStyle(
                             fixedSize: WidgetStateProperty.all(
                               const Size(400, 56),
