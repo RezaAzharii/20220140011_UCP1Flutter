@@ -13,6 +13,10 @@ class DataPiketPage extends StatefulWidget {
 }
 
 class _DataPiketPageState extends State<DataPiketPage> {
+  final _namaAnggotaController = TextEditingController();
+  final _tanggalPiketController = TextEditingController();
+  final _tugasPiketController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
