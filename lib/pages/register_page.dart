@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp_1pml/pages/home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -261,7 +262,23 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 30),
                 ElevatedButton(
                   onPressed: () {
-                    
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) =>
+                                  HomePage(akun: _emailController.text),
+                        ),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Please fill all fields correctly.'),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
+                    }
                   },
                   style: ButtonStyle(
                     fixedSize: WidgetStateProperty.all(const Size(400, 50)),
