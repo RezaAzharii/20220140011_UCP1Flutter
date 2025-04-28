@@ -69,7 +69,29 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: Form(
+        key: _formKey, 
+        child: Padding(
+          padding: EdgeInsets.all(18.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 100),
+                Image.asset('assets/images/logo1.png', width: 250, height: 150),
+                const Text(
+                  "DAFTAR AKUN BARU",
+                  style: TextStyle(
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Schyler",
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+      ),
     );
   }
 }
