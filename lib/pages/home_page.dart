@@ -57,6 +57,26 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          
+          Container(
+            padding: EdgeInsets.all(18.0),
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(0),
+                  width: double.infinity,
+                  height: 150,
+                  child: Image.asset(
+                    'assets/images/ft2.jpeg',
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                    alignment: Alignment(0.0, 0.1),
+                  ),
+                ),
+              ]
+            ),
+          ),
         ],
       ),
     );
