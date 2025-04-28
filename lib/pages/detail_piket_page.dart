@@ -14,7 +14,16 @@ class DetailPiketPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        toolbarHeight: 80,
+        backgroundColor: Colors.deepOrange,
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          'Detail $tugasPiket',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
