@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp_1pml/pages/profile_pelanggan_page.dart';
 
 class DataPelangganPage extends StatefulWidget {
   const DataPelangganPage({super.key});
@@ -16,8 +17,8 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
   final _kodePosController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  String? _validasiNamaCustomer (String? value){
-    if(value == null || value.isEmpty){
+  String? _validasiNamaCustomer(String? value) {
+    if (value == null || value.isEmpty) {
       return 'Nama tidak boleh kosong';
     }
     return null;
@@ -46,20 +47,22 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
     return null;
   }
 
-  String? _validasiAlamat (String? value){
-    if(value == null || value.isEmpty){
+  String? _validasiAlamat(String? value) {
+    if (value == null || value.isEmpty) {
       return 'Alamat tidak boleh kosong';
     }
     return null;
   }
-  String? _validasiProvinsi (String? value){
-    if(value == null || value.isEmpty){
+
+  String? _validasiProvinsi(String? value) {
+    if (value == null || value.isEmpty) {
       return 'Provinsi tidak boleh kosong';
     }
     return null;
   }
-  String? _validasiKodePos (String? value){
-    if(value == null || value.isEmpty){
+
+  String? _validasiKodePos(String? value) {
+    if (value == null || value.isEmpty) {
       return 'Kode Pos tidak boleh kosong';
     }
     return null;
@@ -238,7 +241,22 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
               const SizedBox(height: 80),
               ElevatedButton(
                 onPressed: () {
-                  
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => ProfilePelangganPage(
+                              namaCustomer: _namaCustomerController.text,
+                              email: _emailController.text,
+                              noHp: _noHpController.text,
+                              alamat: _alamatController.text,
+                              provinsi: _provinsiController.text,
+                              kodePos: _kodePosController.text,
+                            ),
+                      ),
+                    );
+                  }
                 },
                 style: ButtonStyle(
                   fixedSize: WidgetStateProperty.all(const Size(400, 50)),
@@ -260,9 +278,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
               ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {
-                  
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   fixedSize: WidgetStateProperty.all(const Size(400, 50)),
                   backgroundColor: WidgetStateProperty.all(Colors.white),
