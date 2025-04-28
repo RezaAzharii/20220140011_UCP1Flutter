@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          
+
           Container(
             padding: EdgeInsets.all(18.0),
             child: Column(
@@ -72,6 +72,117 @@ class _HomePageState extends State<HomePage> {
                     height: double.infinity,
                     fit: BoxFit.cover,
                     alignment: Alignment(0.0, 0.1),
+                  ),
+                ),
+                SizedBox(height: 60),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                          backgroundColor: Colors.deepOrange, // warna tombol
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          fixedSize: Size.fromHeight(180),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              'assets/images/icon3.png',
+                              width: 45,
+                              height: 50,
+                            ),
+                            const SizedBox(width: 10),
+                            const Text(
+                              "Data Piket",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                          backgroundColor: Colors.deepOrange, // warna tombol
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          fixedSize: Size.fromHeight(180),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              'assets/images/icon1.png',
+                              width: 45,
+                              height: 50,
+                            ),
+                            const SizedBox(width: 10),
+                            const Text(
+                              "Data Pelanggan",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    backgroundColor: Colors.deepOrange, // warna tombol
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    fixedSize: Size(400, 180),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset('assets/images/icon2.png', width: 45, height: 50),
+                      const SizedBox(width: 10),
+                      const Text(
+                        "Barang Masuk/Keluar",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ]
