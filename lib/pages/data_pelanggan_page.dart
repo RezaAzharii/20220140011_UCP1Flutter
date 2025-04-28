@@ -235,6 +235,53 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                   ),
                 ],
               ),
+              const SizedBox(height: 80),
+              ElevatedButton(
+                onPressed: () {
+                  
+                },
+                style: ButtonStyle(
+                  fixedSize: WidgetStateProperty.all(const Size(400, 50)),
+                  backgroundColor: WidgetStateProperty.all(Colors.deepOrange),
+                  shape: WidgetStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+                child: const Text(
+                  "Simpan",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  
+                },
+                style: ButtonStyle(
+                  fixedSize: WidgetStateProperty.all(const Size(400, 50)),
+                  backgroundColor: WidgetStateProperty.all(Colors.white),
+                  shape: WidgetStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      side: BorderSide(color: Colors.grey, width: 0.5),
+                    ),
+                  ),
+                ),
+                child: const Text(
+                  "Reset",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepOrange,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
