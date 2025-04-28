@@ -3,10 +3,7 @@ import 'package:intl/intl.dart';
 
 class DataPiketPage extends StatefulWidget {
   final String namaAkun;
-  const DataPiketPage({
-    super.key,
-    required this.namaAkun
-  });
+  const DataPiketPage({super.key, required this.namaAkun});
 
   @override
   State<DataPiketPage> createState() => _DataPiketPageState();
@@ -24,6 +21,27 @@ class _DataPiketPageState extends State<DataPiketPage> {
   void initState() {
     super.initState();
     _namaAnggotaController.text = widget.namaAkun;
+  }
+
+  String? _validateNamaAnggota(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Nama tidak boleh kosong';
+    }
+    return null;
+  }
+
+  String? _validateTanggalPiket(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Tanggal tidak boleh kosong';
+    }
+    return null;
+  }
+
+  String? _validateTugasPiket(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Tugas tidak boleh kosong';
+    }
+    return null;
   }
 
   @override
@@ -63,8 +81,16 @@ class _DataPiketPageState extends State<DataPiketPage> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-
+                    validator: _validateNamaAnggota,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
+                  ),
+                  const SizedBox(height: 20),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: const Text(
+                      'Pilih Tanggal',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
@@ -93,6 +119,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                         });
                       }
                     },
+                    validator: _validateTanggalPiket,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                   ),
                   const SizedBox(height: 20),
@@ -117,7 +144,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                                   borderRadius: BorderRadius.circular(16),
                                 ),
                               ),
-
+                              validator: _validateTugasPiket,
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
                             ),
@@ -151,12 +178,20 @@ class _DataPiketPageState extends State<DataPiketPage> {
                           ),
                         ),
                       ),
-                    ]
+                    ],
                   ),
                 ],
               ),
             ),
           ),
+          Align(
+            alignment: Alignment.center,
+            child: const Text(
+              'Daftar Tugas Piket',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 20),
         ],
       ),
     );
