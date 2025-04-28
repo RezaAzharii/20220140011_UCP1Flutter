@@ -120,7 +120,6 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       }
                     },
                     validator: _validateTanggalPiket,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
                   ),
                   const SizedBox(height: 20),
                   Align(
@@ -145,8 +144,6 @@ class _DataPiketPageState extends State<DataPiketPage> {
                                 ),
                               ),
                               validator: _validateTugasPiket,
-                              autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
                             ),
                           ],
                         ),
