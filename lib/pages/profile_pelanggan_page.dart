@@ -48,9 +48,86 @@ class ProfilePelangganPage extends StatelessWidget {
             const SizedBox(height: 6),
             Text(email, style: TextStyle(fontSize: 16, color: Colors.black54)),
             const SizedBox(height: 4),
-            Text(
-              noHp,
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+            Text(noHp, style: TextStyle(fontSize: 16, color: Colors.black54)),
+            const SizedBox(height: 32),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Alamat',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(height: 8),
+            TextField(
+              readOnly: true,
+              decoration: InputDecoration(
+                hintText: alamat,
+                hintStyle: TextStyle(fontSize: 18),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                fillColor: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Provinsi',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      TextField(
+                        readOnly: true,
+                        decoration: InputDecoration(
+                          hintText: provinsi,
+                          hintStyle: TextStyle(fontSize: 18),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Kode Pos',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      TextField(
+                        readOnly: true,
+                        decoration: InputDecoration(
+                          hintText: kodePos,
+                          hintStyle: TextStyle(fontSize: 18),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
