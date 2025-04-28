@@ -29,7 +29,16 @@ class _DataPiketPageState extends State<DataPiketPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        toolbarHeight: 80,
+        backgroundColor: Colors.deepOrange,
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          'Piket Gudang',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
