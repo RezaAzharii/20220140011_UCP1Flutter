@@ -121,7 +121,23 @@ class _LoginPagesState extends State<LoginPages> {
                 const SizedBox(height: 30),
                 ElevatedButton(
                   onPressed: () {
-                    
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) =>
+                                  HomePage(akun: _emailController.text),
+                        ),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Mohon isi semua field dengan benar.'),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
+                    }
                   },
                   style: ButtonStyle(
                     fixedSize: WidgetStateProperty.all(const Size(400, 50)),
@@ -156,7 +172,12 @@ class _LoginPagesState extends State<LoginPages> {
                     ),
                     InkWell(
                       onTap: () {
-                      
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterPage(),
+                          ),
+                        );
                       },
                       child: const Text(
                         "Daftar disini!",
