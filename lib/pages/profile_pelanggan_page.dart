@@ -135,7 +135,7 @@ class ProfilePelangganPage extends StatelessWidget {
               height: 60,
               child: ElevatedButton(
                 onPressed: () {
-
+                  Navigator.popUntil(context, (route) => route.isFirst);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepOrange,
