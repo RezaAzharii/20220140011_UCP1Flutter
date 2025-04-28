@@ -118,6 +118,57 @@ class _LoginPagesState extends State<LoginPages> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 30),
+                ElevatedButton(
+                  onPressed: () {
+                    
+                  },
+                  style: ButtonStyle(
+                    fixedSize: WidgetStateProperty.all(const Size(400, 50)),
+                    backgroundColor: WidgetStateProperty.all(Colors.deepOrange),
+                    shape: WidgetStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                  child: const Text(
+                    "Masuk",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    const Text(
+                      "Belum punya Akun? Silahkan ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                      
+                      },
+                      child: const Text(
+                        "Daftar disini!",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          color: Colors.deepOrangeAccent,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
