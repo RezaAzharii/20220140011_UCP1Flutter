@@ -77,8 +77,21 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       ),
                     ),
                     readOnly: true,
-                    onTap: () {
-                      
+                    onTap: () async {
+                      DateTime? pickedDate = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(2101),
+                      );
+                      if (pickedDate != null) {
+                        setState(() {
+                          _tanggalPiketController.text = DateFormat(
+                            "EEEE, dd MMMM yyyy",
+                            "id_ID",
+                          ).format(pickedDate);
+                        });
+                      }
                     },
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                   ),
