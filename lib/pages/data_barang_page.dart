@@ -26,6 +26,15 @@ class _DataBarangPageState extends State<DataBarangPage> {
     'Sepatu': 500000,
   };
   
+  void calculateTotalPrice() {
+    int jumlahBarang = int.tryParse(_jumlahBarangController.text) ?? 0;
+    int hargaSatuan = int.tryParse(_hargaSatuanController.text) ?? 0;
+
+    setState(() {
+      totalHarga = jumlahBarang * hargaSatuan;
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold();
