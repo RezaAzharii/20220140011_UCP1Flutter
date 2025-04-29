@@ -16,10 +16,18 @@ class _DataBarangPageState extends State<DataBarangPage> {
   int totalHarga = 0;
   final _formKey = GlobalKey<FormState>();
 
+  List<String> jenisTransaksi = ['Barang Masuk', 'Barang Keluar'];
+  List<String> jenisBarang = ['Carrier', 'Sleeping Bag', 'Tenda', 'Sepatu'];
+
+  final Map<String, int> hargaBarang = {
+    'Carrier': 1500000,
+    'Sleeping Bag': 300000,
+    'Tenda': 700000,
+    'Sepatu': 500000,
+  };
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-    );
+    return Scaffold();
   }
 }
