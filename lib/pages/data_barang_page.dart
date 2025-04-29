@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp_1pml/pages/detail_barang_page.dart';
 
 class DataBarangPage extends StatefulWidget {
   const DataBarangPage({super.key});
@@ -26,7 +27,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
     'Tenda': 700000,
     'Sepatu': 500000,
   };
-  
+
   void calculateTotalPrice() {
     int jumlahBarang = int.tryParse(_jumlahBarangController.text) ?? 0;
     int hargaSatuan = int.tryParse(_hargaSatuanController.text) ?? 0;
@@ -239,7 +240,25 @@ class _DataBarangPageState extends State<DataBarangPage> {
                 height: 60,
                 child: ElevatedButton(
                   onPressed: () {
-                    
+                    if (_formKey.currentState!.validate()) {
+                      calculateTotalPrice();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) => DetailBarangPage(
+                                tanggalTransaksi:
+                                    _tanggalTransaksiController.text,
+                                jenisTransaksi:
+                                    _jenisTransaksiController.toString(),
+                                jenisBarang: _jenisBarangController.toString(),
+                                hargaSatuan: _hargaSatuanController.text,
+                                jumlahBarang: _jumlahBarangController.text,
+                                totalHarga: totalHarga,
+                              ),
+                        ),
+                      );
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepOrange,
