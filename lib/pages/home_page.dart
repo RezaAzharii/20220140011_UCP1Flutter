@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ucp_1pml/pages/data_barang_page.dart';
 import 'package:ucp_1pml/pages/data_pelanggan_page.dart';
 import 'package:ucp_1pml/pages/data_piket_page.dart';
+import 'package:ucp_1pml/pages/login_pages.dart';
 
 class HomePage extends StatefulWidget {
   final String akun;
@@ -54,7 +55,13 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPages()),
+                      (route) => false,
+                    );
+                  },
                   icon: Icon(Icons.logout, color: Colors.white),
                 ),
               ],
@@ -87,7 +94,8 @@ class _HomePageState extends State<HomePage> {
                             context,
                             MaterialPageRoute(
                               builder:
-                                  (context) => DataPiketPage(namaAkun: widget.akun),
+                                  (context) =>
+                                      DataPiketPage(namaAkun: widget.akun),
                             ),
                           );
                         },
@@ -168,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                  ]
+                  ],
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
@@ -180,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    backgroundColor: Colors.deepOrange, // warna tombol
+                    backgroundColor: Colors.deepOrange,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -189,7 +197,11 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset('assets/images/icon2.png', width: 45, height: 50),
+                      Image.asset(
+                        'assets/images/icon2.png',
+                        width: 45,
+                        height: 50,
+                      ),
                       const SizedBox(width: 10),
                       const Text(
                         "Barang Masuk/Keluar",
@@ -202,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-              ]
+              ],
             ),
           ),
         ],

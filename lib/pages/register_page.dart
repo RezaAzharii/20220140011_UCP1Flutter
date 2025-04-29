@@ -142,7 +142,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     const SizedBox(
                       width: 10,
-                    ), // spasi antara email dan no telepon
+                    ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,7 +216,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     const SizedBox(
                       width: 10,
-                    ), // spasi antara password dan konfirmasi password
+                    ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -263,13 +263,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
                           builder:
                               (context) =>
                                   HomePage(akun: _emailController.text),
                         ),
+                        (route) => false,
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
