@@ -126,6 +126,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   }
                 },
                 validator: _validateTanggal,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               const SizedBox(height: 30),
               DropdownButtonFormField<String>(
@@ -150,6 +151,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   ),
                 ),
                 validator: _validateJenistransaksi,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               const SizedBox(height: 30),
               DropdownButtonFormField<String>(
@@ -178,6 +180,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   ),
                 ),
                 validator: _validateJensibarang,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               const SizedBox(height: 20),
               Row(
@@ -202,6 +205,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                             ),
                           ),
                           validator: _validateJumlahBarang,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ],
                     ),
@@ -228,6 +232,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                             ),
                           ),
                           validator: _validateHargaSatuan,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ],
                     ),
