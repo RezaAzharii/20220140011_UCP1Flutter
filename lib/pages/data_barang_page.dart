@@ -69,9 +69,20 @@ class _DataBarangPageState extends State<DataBarangPage> {
     }
     return null;
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 80,
+        backgroundColor: Colors.deepOrange,
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text(
+          'Pendataan Barang',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
   }
 }
