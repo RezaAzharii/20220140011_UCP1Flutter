@@ -34,6 +34,41 @@ class _DataBarangPageState extends State<DataBarangPage> {
       totalHarga = jumlahBarang * hargaSatuan;
     });
   }
+
+  String? _validateTanggal(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Tanggal tidak boleh kosong';
+    }
+    return null;
+  }
+
+  String? _validateJenistransaksi(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Jenis Transaksi tidak boleh kosong';
+    }
+    return null;
+  }
+
+  String? _validateJensibarang(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Jenis Barang tidak boleh kosong';
+    }
+    return null;
+  }
+
+  String? _validateJumlahBarang(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Jumlah Barang tidak boleh kosong';
+    }
+    return null;
+  }
+
+  String? _validateHargaSatuan(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Harga Satuan tidak boleh kosong';
+    }
+    return null;
+  }
   
   @override
   Widget build(BuildContext context) {
