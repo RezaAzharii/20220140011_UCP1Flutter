@@ -26,10 +26,10 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
 
   String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your email';
+      return 'Email tidak boleh kosong';
     }
     if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-      return 'Please enter a valid email';
+      return 'Masukan email dengan benar';
     }
     return null;
   }
